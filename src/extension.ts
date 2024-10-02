@@ -29,7 +29,6 @@ export function activate(context: vscode.ExtensionContext) {
       }
 
       try {
-        // Query LLaMA 3.1 running locally
         const response = await axios.post(
           "http://localhost:11434/api/generate",
           {
@@ -44,7 +43,6 @@ export function activate(context: vscode.ExtensionContext) {
         const codingBuddyResponse = await response.data?.response;
         console.log(response.data);
 
-        // Display response in a new editor window
         const doc = await vscode.workspace.openTextDocument({
           content: codingBuddyResponse,
           language: "plaintext",

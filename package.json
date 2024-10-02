@@ -1,7 +1,8 @@
 {
-  "name": "codebuddy",
-  "displayName": "CodeBuddy",
-  "description": "",
+  "name": "devpartner",
+  "displayName": "DevPartner",
+  "publisher": "SaifZ",
+  "description": "Your Peer Coding Assistant",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.93.0"

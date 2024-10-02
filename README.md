@@ -1,71 +1,52 @@
-# codebuddy README
+# DevPartner README
 
-This is the README for your extension "codebuddy". After writing up a brief description, we recommend including the following sections.
+DevPartner is a VSCode extension designed to act as a Coding Buddy, helping you solve coding problems, providing suggestions, and acting as a programming assistant similar to CoPilot, but with an integration to locally hosted LLaMA models. It uses an AI-powered large language model (LLM) to assist in your coding tasks.
+
+Authors: Saif Z (210071601157) And Vikas S (210071601188)
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Code Assistance**: You can select any part of your code and ask DevPartner to analyze it and provide feedback or suggestions.
+- **Custom Queries**: Ask specific questions or get clarifications about any part of your codebase, including explanations and code improvements.
+- **AI-Powered Code Generation**: DevPartner can generate code snippets based on natural language prompts, using LLaMA running locally on your machine.
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+> Tip: You can easily ask DevPartner to explain code or generate new ideas for functions!
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+To use DevPartner, you need the following:
+
+- A locally installed LLaMA 3.1 model and its associated API.
+- Proper configuration of the LLaMA API to be accessible at `localhost` on port `11434`.
+
+Follow these steps to set up the API:
+
+1. Download and install the LLaMA model on your machine.
+2. Ensure the API is running by executing the following command:
+   ```
+   ollama serve
+   ```
+3. Verify the API is running by checking it with Postman or a simple `curl` request.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+- `DevPartner.apiUrl`: Set the URL for your LLaMA server. Default is `http://localhost:11434/api/generate`.
+- `DevPartner.maxTokens`: Configure the maximum number of tokens in a response.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- Occasionally, the connection to the LLaMA API may reset due to timeout or network issues. Ensure that the API server is running and accessible at the specified URL.
+- Large queries may take longer to process; consider adjusting the `maxTokens` setting for more efficient responses.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+- Initial release of DevPartner.
+- Core features: Code suggestions, analysis, and query-based responses using LLaMA 3.1.
 
 ---
 
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+**Enjoy using DevPartner!**
